@@ -1,0 +1,61 @@
+input {
+    font-size: 1.3rem;
+}
+
+.resident_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+li {
+    cursor: pointer;
+}
+ li:hover {
+    color: #E6E803;
+ }
+
+ .card {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ .card_img {
+    height: 55vh;
+ }
+
+ .card_title {
+    margin: 1rem;
+    font-size: 3rem;
+    color: #78D116;
+ }
+
+ .card_input {
+    height: 2.2rem;
+ }
+
+
+ @media (max-width: 580px) {  
+   .card_img {
+      height: auto;
+   }
+
+   .card_title {
+   font-size: 1.9rem;
+   }
+
+ }
+
+@media (max-width: 440px) {
+   
+ .card_title {
+   font-size: 1.5rem;
+}
+
+input {
+   font-size: 1rem;
+}
+}
