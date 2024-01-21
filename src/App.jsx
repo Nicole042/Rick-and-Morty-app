@@ -38,6 +38,10 @@ const handleUserInput = (e) => {
   setInputValue(e.target.value)
 }
 
+const handleSubmit = (e) => {
+  e.preventDefault()
+}
+
 const htmlResponse = () => {
   if (getLocationError) {
     return <h2>Hey! No results found</h2>
@@ -58,9 +62,9 @@ const htmlResponse = () => {
     <div className='card'>
       <img className='card_img' src="/rickMortyImg.jpg" alt="" />
       <h1 className='card_title'>Rick and Morty</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input placeholder= "Enter location name" className='card_input' id="input" onChange={(e) => handleUserInput(e)} ref={inputLocation} type="text" />
-        <ul className=''>
+        <ul>
           {
               locations?.results.map((location) =>
                 <li key={location.id} onClick={ (e) => handleUserSelect(e, location)}>
@@ -70,6 +74,7 @@ const htmlResponse = () => {
                 </li>
               )
           }
+        
         </ul>
       </form>
       { htmlResponse() }

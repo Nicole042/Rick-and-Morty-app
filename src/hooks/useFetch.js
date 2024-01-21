@@ -14,8 +14,8 @@ const useFetch = (url) => {
             setHasError(false)
         })
         .catch (err => {
-            console.log(err)
             setHasError(true)
+            
         })
 }
     return [response, getApi, hasError]
